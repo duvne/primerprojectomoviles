@@ -1,6 +1,9 @@
 package com.example.primerprojecto;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +12,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    EditText edtn1, edtn2;
 
+    TextView txtresultado;
+
+    Button btncalcular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +27,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        edtn1 = findViewById(R.id.edtn1);
+        edtn2 = findViewById(R.id.edtn2);
+        txtresultado = findViewById(R.id.txtresultado);
+        btncalcular = findViewById(R.id.btncalcular);
     }
 }
