@@ -1,9 +1,11 @@
 package com.example.primerprojecto;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView txtresultado;
 
-    Button btncalcular;
+    Button btncalcular, btnlimpiar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +30,44 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         edtn1 = findViewById(R.id.edtn1);
         edtn2 = findViewById(R.id.edtn2);
         txtresultado = findViewById(R.id.txtresultado);
         btncalcular = findViewById(R.id.btncalcular);
+        btnlimpiar = findViewById(R.id.btnlimpiar);
+
+        btnlimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                limpiar();
+            }
+        });
+        btncalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+            }
+
+            private void calcular() {
+                String n1 = edtn1.getText().toString();
+                String n2 = edtn2.getText().toString();
+
+                if (n1.isEmpty() || n2.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "ingrese los datos", Toast.LENGTH_SHORT).show();
+                } else {
+                    int num1 = Integer.parseInt(n1);
+                    int num2 = Integer.parseInt(n2);
+                    int suma = num1 + num2;
+                    txtresultado.setText(String.valueOf(suma));
+                }
+            }
+        });
+    }
+
+    private void limpiar() {
+        edtn1.setText("");
+        edtn2.setText("");
+        txtresultado.setText("0");
     }
 }
