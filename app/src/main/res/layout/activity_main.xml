@@ -16,14 +16,15 @@
         android:text="mi calculadora"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="#ff54"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="completa los campos para realizar la suma "
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="#ff57"
+        android:textStyle="bold"
         android:paddingTop="20dp"/>
 
     <LinearLayout
@@ -41,12 +42,12 @@
             android:hint="0"
             android:layout_marginLeft="5dp"
             android:id="@+id/edtn1"/>
-        <TextView
-            android:layout_width="wrap_content"
+
+        <Spinner
+            android:id="@+id/spiner"
+            android:layout_width="57dp"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="20dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_margin="20dp" />
 
         <EditText
             android:id="@+id/edtn2"
@@ -65,13 +66,6 @@
             android:layout_marginLeft="5dp"/>
 
 
-        <TextView
-            android:id="@+id/txtresultado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="20dp"
-            android:layout_marginLeft="5dp"/>
 
 
     </LinearLayout>

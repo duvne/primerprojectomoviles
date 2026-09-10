@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">primerprojecto</string>
+    <string name="title_activity_resultado">resultado</string>
 </resources>
